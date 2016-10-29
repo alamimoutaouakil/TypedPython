@@ -1,8 +1,8 @@
 # TypedPython
 
-Typed pyhon is a package that will let you force type the attributes of your classes and check their integrety.
+Typed pyhon is a package that will let you force type the attributes of your classes and check their integrity.
 
-After defining your class, you can pass attribute as you usually do in python, but this time it will be checked against the predefined type.
+After defining your class, you can assign a value to the attributes of the class as you usually do in python, but this time it will be checked against the predefined type.
 
 
 Here is an example of how to use is:
