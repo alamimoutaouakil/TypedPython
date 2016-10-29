@@ -1,6 +1,6 @@
 from datetime import date
 
-from typedpython.generics import GenericType
+from typedpython.generics import GenericType, GenericListType
 
 __all__ = ["String", "Date", "Double", "Integer", "Boolean"]
 
@@ -67,3 +67,48 @@ class Boolean(GenericType):
     @property
     def _error_message(self):
         return "Attribute {} should be of type bool".format(self._attr_name)
+
+
+class StringList(GenericListType):
+    def subtype(self):
+        return String()
+
+    @property
+    def _error_message(self):
+        return "Attribute {} should be a list of strings".format(self._attr_name)
+
+
+class DoubleList(GenericListType):
+    def subtype(self):
+        return Double()
+
+    @property
+    def _error_message(self):
+        return "Attribute {} should be a list of doubles".format(self._attr_name)
+
+
+class IntegerList(GenericListType):
+    def subtype(self):
+        return Integer()
+
+    @property
+    def _error_message(self):
+        return "Attribute {} should be a list of integers".format(self._attr_name)
+
+
+class DateList(GenericListType):
+    def subtype(self):
+        return Date()
+
+    @property
+    def _error_message(self):
+        return "Attribute {} should be a list of {}".format(self._attr_name, date.__name__)
+
+
+class BooleanList(GenericListType):
+    def subtype(self):
+        return Boolean()
+
+    @property
+    def _error_message(self):
+        return "Attribute {} should be a list of boolean".format(self._attr_name)
